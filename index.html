@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vape &amp; Go — AI SEO Strategy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--teal:#045C56;--teal-d:#033F3B;--green:#7AFF8C;--coral:#FC435B;--white:#FFFFFF;--mist:#F0F4F8;--ink:#13211F;--slate:#56656A;--line:#DCE5E3;--green-tint:#E7FBEA;--coral-tint:#FFE7EB;--teal-tint:#E2EFED;--maxw:1080px;}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}
+  body{margin:0;background:var(--mist);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--green);color:var(--teal-d)}
+  header.top{position:sticky;top:0;z-index:50;background:var(--teal);color:#fff}
+  .top-inner{max-width:var(--maxw);margin:0 auto;padding:13px 22px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .brand{font-family:'Space Grotesk';font-weight:700;font-size:1.05rem;letter-spacing:-.01em;display:flex;align-items:center;gap:9px}
+  .brand .dot{width:11px;height:11px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(122,255,140,.25)}
+  .brand small{font-family:'IBM Plex Mono';font-weight:400;font-size:.62rem;opacity:.72;letter-spacing:.14em;text-transform:uppercase;display:block;margin-top:-2px}
+  /* tab bar */
+  .tabs{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap}
+  .tab{font-family:'Space Grotesk';font-weight:600;font-size:.86rem;color:rgba(255,255,255,.82);background:rgba(255,255,255,.10);border:none;padding:9px 16px;border-radius:9px;cursor:pointer;transition:.15s;letter-spacing:-.01em}
+  .tab:hover{background:rgba(255,255,255,.2);color:#fff}
+  .tab.active{background:var(--green);color:var(--teal-d)}
+  .tab .ct{font-family:'IBM Plex Mono';font-size:.66rem;opacity:.7;margin-left:5px}
+  .tab.active .ct{opacity:.85}
+  /* strategy jump nav */
+  .jump{background:var(--teal-d);position:sticky;top:55px;z-index:40}
+  .jump-inner{max-width:var(--maxw);margin:0 auto;padding:8px 22px;display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+  .jump-inner::-webkit-scrollbar{display:none}
+  .jump a{font-family:'IBM Plex Mono';font-size:.68rem;color:rgba(255,255,255,.7);text-decoration:none;padding:5px 8px;border-radius:6px;white-space:nowrap}
+  .jump a:hover{background:rgba(255,255,255,.12);color:#fff}.jump a.active{background:var(--green);color:var(--teal-d);font-weight:600}
+  .hero{max-width:var(--maxw);margin:0 auto;padding:46px 22px 20px}
+  .eyebrow{font-family:'IBM Plex Mono';font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);font-weight:500}
+  .hero h1{font-family:'Space Grotesk';font-weight:700;letter-spacing:-.025em;line-height:1.05;font-size:clamp(1.9rem,4.6vw,3rem);margin:14px 0 0;color:var(--teal-d)}
+  .hero h1 em{font-style:normal;color:var(--coral)}
+  .hero .lede{font-size:1.08rem;color:var(--slate);max-width:64ch;margin:18px 0 0}
+  .meta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .meta-row .chip{font-family:'IBM Plex Mono';font-size:.7rem;background:#fff;border:1px solid var(--line);padding:7px 12px;border-radius:999px;color:var(--slate)}
+  .meta-row .chip b{color:var(--teal)}
+  .legend{max-width:var(--maxw);margin:8px auto 0;padding:0 22px}
+  .legend-box{background:var(--teal-d);border-radius:14px;padding:16px 20px;color:#dfeeec}
+  .legend-box h4{margin:0 0 10px;font-family:'IBM Plex Mono';font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green)}
+  .legend-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}
+  .legend-grid div{font-size:.82rem;display:flex;gap:9px;align-items:flex-start}
+  .tag{font-family:'IBM Plex Mono';font-size:.62rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:5px;white-space:nowrap;vertical-align:middle;line-height:1.5}
+  .t-conf{background:var(--teal-tint);color:var(--teal-d);border:1px solid #bcd8d4}
+  .t-rec{background:var(--green-tint);color:#16633a;border:1px solid #b6ecc1}
+  .t-assume{background:#eef1f4;color:var(--slate);border:1px solid #d9e0e6}
+  .t-verify{background:var(--coral-tint);color:#c01f38;border:1px solid #ffc6cf}
+  main{max-width:var(--maxw);margin:0 auto;padding:6px 22px 80px}
+  .view{display:none}.view.active{display:block}
+  section{scroll-margin-top:104px;padding:42px 0 8px;border-top:1px solid var(--line);margin-top:30px}
+  section:first-of-type{border-top:none;margin-top:6px}
+  .sec-head{display:flex;gap:16px;align-items:baseline;margin-bottom:8px;flex-wrap:wrap}
+  .sec-num{font-family:'IBM Plex Mono';font-weight:600;color:var(--green);background:var(--teal);padding:3px 9px;border-radius:7px;font-size:.82rem}
+  .sec-num.alt{background:var(--coral);color:#fff}
+  h2{font-family:'Space Grotesk';font-weight:700;letter-spacing:-.02em;font-size:clamp(1.5rem,3.4vw,2.05rem);color:var(--teal-d);margin:0;line-height:1.12}
+  h3{font-family:'Space Grotesk';font-weight:600;font-size:1.16rem;color:var(--teal-d);margin:28px 0 8px;scroll-margin-top:104px}
+  h4{font-family:'Space Grotesk';font-weight:600;font-size:1rem;color:var(--ink);margin:18px 0 6px}
+  p{margin:10px 0}a{color:var(--teal);text-decoration:underline;text-underline-offset:2px}
+  strong{color:var(--teal-d);font-weight:600}ul,ol{margin:10px 0;padding-left:20px}li{margin:5px 0}
+  .muted{color:var(--slate)}code{font-family:'IBM Plex Mono';font-size:.85em;background:#eef1f4;padding:1px 5px;border-radius:4px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:16px 0}
+  .card.accent{border-left:4px solid var(--green)}.card.warn{border-left:4px solid var(--coral);background:#fffafb}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media(max-width:760px){.grid2,.grid3{grid-template-columns:1fr}}
+  .callout{background:var(--teal);color:#eafaf8;border-radius:14px;padding:18px 20px;margin:18px 0}
+  .callout h4{color:#fff;margin-top:0}.callout p{color:#d4ece9}
+  .scorecards{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:18px 0}
+  .score{background:#fff;border:1px solid var(--line);border-radius:13px;padding:15px 16px 13px}
+  .score .lab{font-family:'IBM Plex Mono';font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--slate)}
+  .score .val{font-family:'Space Grotesk';font-weight:700;font-size:1.7rem;color:var(--teal-d);line-height:1.1;margin-top:6px}
+  .score .sub{font-size:.72rem;color:var(--slate);margin-top:3px}
+  .score.flag{border-color:#f6c9d1;background:#fff7f8}.score.flag .val{color:var(--coral)}
+  .score.good{border-color:#b6ecc1;background:#f4fff6}.score.good .val{color:var(--teal)}
+  .tbl-wrap{overflow-x:auto;margin:16px 0;border:1px solid var(--line);border-radius:13px}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:.85rem}
+  th{background:var(--teal);color:#fff;text-align:left;padding:10px 12px;font-family:'IBM Plex Mono';font-weight:500;font-size:.68rem;letter-spacing:.04em;text-transform:uppercase;position:sticky;top:0}
+  td{padding:10px 12px;border-top:1px solid var(--line);vertical-align:top}
+  tbody tr:nth-child(even){background:#fafcfb}tbody tr.me{background:var(--green-tint)}tbody tr.me td:first-child{font-weight:600}
+  td.num{font-family:'IBM Plex Mono';white-space:nowrap}td.hl{font-family:'IBM Plex Mono';font-weight:600;color:var(--teal-d)}
+  tr.grp td{background:var(--teal-d);color:var(--green);font-family:'IBM Plex Mono';font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+  .b{font-family:'IBM Plex Mono';font-size:.62rem;font-weight:600;padding:2px 7px;border-radius:5px;white-space:nowrap;display:inline-block}
+  .p1{background:var(--coral);color:#fff}.p2{background:#ffd9b0;color:#8a4b08}.p3{background:#e7edf1;color:var(--slate)}
+  .lo{background:var(--green-tint);color:#16633a}.med{background:#fff0d6;color:#8a5a08}.hi{background:var(--coral-tint);color:#c01f38}
+  .st-prog{background:var(--green);color:var(--teal-d)}.st-back{background:#e7edf1;color:var(--slate)}.st-new{background:#fff;color:var(--teal);border:1px solid var(--teal)}
+  .legend-inline{font-family:'IBM Plex Mono';font-size:.68rem;color:var(--slate);margin:6px 0 0}
+  .bars{margin:16px 0}
+  .bar-row{display:grid;grid-template-columns:140px 1fr 64px;align-items:center;gap:10px;margin:7px 0}
+  .bar-row .name{font-size:.82rem;font-weight:500;text-align:right;color:var(--ink)}.bar-row.me .name{color:var(--teal-d);font-weight:700}
+  .bar-track{background:#e9eff2;border-radius:6px;height:20px;overflow:hidden}
+  .bar-fill{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--teal),#0a7a72)}
+  .bar-row.me .bar-fill{background:linear-gradient(90deg,#16a34a,var(--green))}
+  .bar-row .v{font-family:'IBM Plex Mono';font-size:.78rem;color:var(--slate)}
+  @media(max-width:560px){.bar-row{grid-template-columns:96px 1fr 52px;gap:7px}.bar-row .name{font-size:.74rem}}
+  .checklist{background:#fff;border:1px solid var(--line);border-radius:14px;padding:6px 4px;margin:14px 0}
+  .ck{display:flex;gap:11px;align-items:flex-start;padding:11px 16px;border-top:1px solid var(--line)}
+  .ck:first-child{border-top:none}
+  .ck .box{flex:0 0 18px;width:18px;height:18px;border-radius:5px;border:2px solid var(--teal);margin-top:2px;position:relative}
+  .ck.done .box{background:var(--teal);border-color:var(--teal)}
+  .ck.done .box::after{content:"✓";color:var(--green);font-size:.74rem;font-weight:700;position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+  .ck .txt{font-size:.9rem}.ck .txt b{color:var(--teal-d)}.ck.flag .box{border-color:var(--coral)}
+  .layer-actions{margin:8px 0 0;padding-left:18px}.layer-actions li{font-size:.9rem;color:var(--slate)}.layer-actions li b{color:var(--ink);font-weight:600}
+  /* filter */
+  .filterbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:14px 0}
+  .filterbar span{font-family:'IBM Plex Mono';font-size:.68rem;color:var(--slate);text-transform:uppercase;letter-spacing:.08em}
+  .fbtn{font-family:'IBM Plex Mono';font-size:.72rem;font-weight:600;border:1px solid var(--line);background:#fff;color:var(--slate);padding:6px 13px;border-radius:8px;cursor:pointer;transition:.15s}
+  .fbtn:hover{border-color:var(--teal)}.fbtn.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+  footer{background:var(--teal-d);color:#cfe4e1;margin-top:40px}
+  .foot-inner{max-width:var(--maxw);margin:0 auto;padding:32px 22px;font-size:.82rem}
+  .foot-inner a{color:var(--green)}.src{font-family:'IBM Plex Mono';font-size:.72rem;line-height:1.9}
+  .toplink{position:fixed;right:18px;bottom:18px;background:var(--teal);color:var(--green);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:1.1rem;box-shadow:0 6px 18px rgba(4,92,86,.3);opacity:0;pointer-events:none;transition:.25s;z-index:60}
+  .toplink.show{opacity:1;pointer-events:auto}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <div class="brand"><span class="dot"></span>Vape &amp; Go<small>AI SEO Strategy</small></div>
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-view="strategy">Strategy</button>
+      <button class="tab" data-view="actions">All Actions<span class="ct">55</span></button>
+      <button class="tab" data-view="competitive">Competitive Analysis</button>
+    </div>
+  </div>
+</header>
+
+<!-- strategy jump-nav (only meaningful on strategy tab) -->
+<div class="jump" id="jumpnav">
+  <div class="jump-inner">
+    <a href="#s1">01 Summary</a><a href="#s2">02 Takeaways</a><a href="#s3">03 Landscape</a>
+    <a href="#s4">04 Framework</a><a href="#ck-eeat">E-E-A-T·AI</a><a href="#ck-tech">Tech·AI</a><a href="#ck-content">Content·Comp.</a>
+    <a href="#s5">05 Actions</a><a href="#s7">07 Automation</a><a href="#s8">08 AI Data</a>
+    <a href="#s9">09 Risks</a><a href="#s10">10 3-Month</a><a href="#s11">11 6-Month</a><a href="#s12">12 Next</a>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="eyebrow">AI SEO Strategy Session · vapeandgo.co.uk · UK · 25 Jun 2026</div>
+  <h1>Don't launch a parallel "AI SEO" programme. <em>Add a measurement layer</em> to the SEO you're already winning.</h1>
+  <p class="lede">A merged, evidence-first plan combining the SEOSLY analysis (SE Ranking baseline, live-page audit, 75-prompt benchmark, ClickUp review) with this session's live Ahrefs AI-citation and GA4 AI-referral pulls. Use the tabs above for the full Strategy, a single All-Actions list, or the Competitive Analysis.</p>
+  <div class="meta-row">
+    <span class="chip">Strategy <b>SEOSLY / Olga Zarr</b></span>
+    <span class="chip">Delivery <b>seoBusiness / Caren Smith</b></span>
+    <span class="chip">Entity <b>LOVE VAPING LTD · Co. 11308158</b></span>
+    <span class="chip">Window <b>1 Jun – 31 Aug 2026</b></span>
+  </div>
+</div>
+
+<div class="legend"><div class="legend-box">
+  <h4>How to read this — every claim is tagged · two evidence snapshots merged</h4>
+  <div class="legend-grid">
+    <div><span class="tag t-conf">Confirmed</span> Sourced (Google, Ahrefs, GA4, SE Ranking, ClickUp, live site, GOV.UK).</div>
+    <div><span class="tag t-assume">Assumption</span> Reasonable inference.</div>
+    <div><span class="tag t-rec">Recommendation</span> What we advise.</div>
+    <div><span class="tag t-verify">Verify</span> Needs current data or a human decision.</div>
+  </div>
+</div></div>
+
+<main>
+
+<!-- ============ STRATEGY VIEW ============ -->
+<div id="view-strategy" class="view active">
+
+<section id="s1">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Executive Summary</h2></div>
+  <p>Vape &amp; Go should <strong>not</strong> run a separate "AI SEO" programme. It should add an AI visibility, automation and measurement layer to the existing 90-day SEO programme, whose principles are already right: commercial pages first, ClickUp as source of truth, one URL per task, keyword mapping before optimisation, AI-assisted execution, human QA, post-publish monitoring. Google supports this — its generative features use the core Search index and it treats AEO/GEO as SEO, not a separate discipline. <span class="tag t-conf">Confirmed</span></p>
+  <h3>Current baseline</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Area</th><th>Current position</th></tr></thead>
+    <tbody>
+      <tr><td>SE Ranking tracked organic set</td><td class="num">607 keywords</td></tr>
+      <tr><td>Tracked keywords in Top 5 / Top 10</td><td class="num">95 / 125</td></tr>
+      <tr><td>Average tracked position</td><td class="num">19</td></tr>
+      <tr><td>Ahrefs est. UK organic traffic</td><td class="num">36,001 visits/mo</td></tr>
+      <tr><td>Ahrefs organic keywords / DR / ref. domains</td><td class="num">2,404 / 64 / 1,327</td></tr>
+      <tr><td>SE Ranking AI share of voice</td><td class="num">2.85%</td></tr>
+      <tr><td>SE Ranking AI brand / link presence</td><td class="num">86 / 208</td></tr>
+      <tr><td>Vape &amp; Go-specific tracked AI prompts</td><td class="num"><b>0</b></td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted" style="font-size:.85rem">These datasets aren't interchangeable: SE Ranking's 607-keyword project is a controlled tracked set; Ahrefs figures are modelled site-wide estimates; AI SOV is from SE Ranking's UK prompt database, not the whole AI market. Both Ahrefs pulls agree within ~1%. <span class="tag t-conf">Confirmed</span></p>
+  <div class="callout"><h4>The headline the merge exposes</h4>
+    <p>SE Ranking's UK prompt database reports <strong>0</strong> ChatGPT presence. But Ahrefs counts <strong>309 ChatGPT citations</strong> and GA4 records <strong>1,391 real ChatGPT sessions with 58 conversions</strong> in 3 months. The "0" is a coverage gap in one tool's configured prompts — not reality. No single AI tool is ground truth: triangulate, and configure your own prompt cohort.</p></div>
+  <h3>The biggest opportunities</h3>
+  <ol>
+    <li>Correct quality &amp; compliance weaknesses on high-priority pages.</li>
+    <li>Improve category, brand &amp; product-cluster architecture.</li>
+    <li>Finish crawlability, raw-HTML, canonical &amp; structured-data work.</li>
+    <li>Operationalise the AI agents already planned in ClickUp — without duplicates.</li>
+    <li>Configure a fixed AI prompt benchmark so AI visibility is measurable.</li>
+    <li>Use selective authority building, not a generic backlink campaign.</li>
+  </ol>
+</section>
+
+<section id="s2">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Key Takeaways</h2></div>
+  <h3>Not starting from zero</h3>
+  <p class="muted">The ClickUp workspace already holds: build-agents-for-SOPs; AI-vs-organic reporting; homepage E-E-A-T/trust; author schema &amp; About; breadcrumb/schema/canonical/CMS; internal linking; Lost Mary/SKE/Hayati optimisation; Cloudflare &amp; bot-crawl; dashboard/reporting. The "build agents" task is broad, the AI-vs-organic reporting task is waiting/overdue, and the homepage "AI/LLM tuning" task contains unsupported ideas (entity-confidence score, blanket compliance). Rewrite &amp; operationalise — don't duplicate. <span class="tag t-conf">Confirmed (ClickUp)</span></p>
+  <h3>The largest organic gap is not simply authority</h3>
+  <p class="muted">DR 64 ≈ Vape UK's 65, above Superstore (62) &amp; Totally Wicked (53) — yet far fewer ranking keywords and much less traffic. The gap: commercial page coverage · category/subcategory architecture · ranking distribution · keyword-to-page intent matching · internal-link concentration · content-quality consistency · technical implementation/indexability.</p>
+  <h3>AI tools disagree — measure your own</h3>
+  <p class="muted">SE Ranking's set shows almost all measured AI visibility from Google AI Overviews, ChatGPT/Gemini at 0 — a coverage gap, not proof of absence (Ahrefs/GA4 show real ChatGPT presence). The 2.85% SOV is a diagnostic, not yet a KPI. A Vape &amp; Go-specific 75-prompt benchmark is the fix. <span class="tag t-conf">Confirmed</span></p>
+  <h3>Compliance &amp; factual quality are immediate SEO issues</h3>
+  <p class="muted">The live SKE page carries single-use "dispose" framing, an absolute "leakproof" claim, safety-by-reputation, and cessation/"beats a pack of 20" language; the Hayati page reportedly uses "Ban-Proof Certified" and conflates TPD with safety. There is no general "ban-proof certification"; compliance ≠ safety. P1 SEO + legal fixes. <span class="tag t-conf">Confirmed on live SKE page</span></p>
+</section>
+
+<section id="s3">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Market Landscape</h2></div>
+  <h3>Traditional search remains primary</h3>
+  <p><span class="tag t-conf">Confirmed</span> Statcounter put Google at <strong>91.17%</strong> of UK search in May 2026 (Bing 6.22%), consistent with the ~90% range verified independently. Google remains the primary organic discovery channel. <span class="tag t-verify">Verify your channel mix in GA4.</span></p>
+  <p class="muted">Statcounter's separate UK AI-chatbot panel (different denominator, not comparable to search share): ChatGPT 70.16%, Copilot 10.21%, Gemini 8.15%, Claude 5.94%, Perplexity 5.52% — mirroring your own referrals.</p>
+  <h3>Where AI search is meaningful</h3>
+  <div class="grid2">
+    <ul class="muted"><li>Product/category comparisons.</li><li>Compatibility questions.</li><li>"Which product is suitable for…".</li><li>Legacy-disposable → reusable migration.</li></ul>
+    <ul class="muted"><li>Feature summaries.</li><li>Troubleshooting &amp; setup.</li><li>Brand-reputation / retailer-selection.</li><li>Long conversational queries (query fan-out).</li></ul>
+  </div>
+  <div class="card warn"><h4>Why "half of searches use AI" is unusable</h4><p class="muted" style="margin:0">Two 2026 studies put AI-Overview activation at <strong>13.7%</strong> vs <strong>51.5%</strong> — query mix &amp; method swing it wildly. Track your own cohort. <span class="tag t-conf">Confirmed</span></p></div>
+  <h3>Ecommerce opportunity &amp; constraints</h3>
+  <p class="muted">Google says sharing ecommerce data &amp; structure helps it find/parse products — Merchant Center feeds, product info, logical architecture &amp; valid schema beat "AI-friendly" content. Constraints: adult-only/regulated context · single-use ban · SKU-level legal verification · rapid stock/flavour change · legacy terminology · JS/AJAX platform (content may be missing from raw HTML) · AI repeating inaccurate claims · external-channel promo limits. <strong>Note:</strong> vape is not broadly suppressed in AI — hundreds of citations exist; <strong>Gemini is the exception (9)</strong>. <span class="tag t-conf">Confirmed</span></p>
+</section>
+
+<section id="s4">
+  <div class="sec-head"><span class="sec-num">04</span><h2>AI SEO Strategy Framework</h2></div>
+  <p>Nine pillars with the traditional + AI-search benefit of each; the "how" follows as six action layers, then three checklists. <span class="tag t-conf">Confirmed</span></p>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Strategic pillar</th><th>What it means for Vape &amp; Go</th><th>Traditional + AI benefit</th></tr></thead>
+    <tbody>
+      <tr><td><b>1. Crawlable technical foundation</b></td><td>H1s, copy, breadcrumbs &amp; links in raw HTML; fix canonicals, indexability, redirects, rendering.</td><td>Pages retrievable by Google &amp; other search systems.</td></tr>
+      <tr><td><b>2. Commercial information architecture</b></td><td>Brand → device → kit → pod → flavour, one page per intent.</td><td>Topical understanding, internal-link flow, query fan-out.</td></tr>
+      <tr><td><b>3. Product-data quality</b></td><td>Verified compatibility, capacity, strength, items, reusable design, price, stock.</td><td>Organic product results, AI answers, conversion.</td></tr>
+      <tr><td><b>4. Useful commercial content</b></td><td>Answer selection/compatibility/setup/difference questions with original info.</td><td>Quotable, citation-worthy passages + rankings.</td></tr>
+      <tr><td><b>5. Trust &amp; E-E-A-T</b></td><td>Verified entity, named authors/reviewers, original photos, sourcing, policies.</td><td>Customer trust + reliability signals.</td></tr>
+      <tr><td><b>6. Internal linking &amp; entity consistency</b></td><td>Consistent names, model relationships, descriptive anchors.</td><td>Crawlers understand hierarchy; reinforces commercial pages.</td></tr>
+      <tr><td><b>7. Brand authority</b></td><td>Earn manufacturer/industry/recycling/vendor/expert references.</td><td>Reputation without artificial mentions.</td></tr>
+      <tr><td><b>8. UX &amp; conversion alignment</b></td><td>Compatibility, product type, stock, purchasing clear on mobile.</td><td>Converts users from AI/organic.</td></tr>
+      <tr><td><b>9. Monitoring &amp; learning</b></td><td>Track rankings, prompt visibility, citations, traffic, outcomes separately.</td><td>Prevents AI estimates being mistaken for revenue/rankings.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted" style="font-size:.85rem">Google describes E-E-A-T as a conceptual mix of signals, not a score — the homepage task should focus on verifiable trust &amp; authorship, not an invented "entity confidence score". <span class="tag t-conf">Confirmed</span></p>
+  <h3>The "how" — six action layers</h3>
+  <div class="card"><h4>Layer 1 — Technical foundation</h4><ul class="layer-actions"><li><b>Confirm H1/copy/breadcrumbs/links in raw HTML</b> (critical on JS/AJAX platform).</li><li><b>Ship IndexNow + Indexing API; fix CMS schema field.</b></li><li><b>Audit</b> canonicals, indexability, redirects, mobile parity; protect crawl budget.</li></ul></div>
+  <div class="card"><h4>Layer 2 — Architecture &amp; entity consistency</h4><ul class="layer-actions"><li><b>Build brand → device → kit → pod → flavour</b>, one page per intent; resolve cannibalisation; consistent anchors.</li></ul></div>
+  <div class="card"><h4>Layer 3 — Product data &amp; useful content</h4><ul class="layer-actions"><li><b>One verified compatibility source;</b> answer buyer questions with first-hand content; build collection pages for unserved clusters.</li></ul></div>
+  <div class="card"><h4>Layer 4 — Internal linking</h4><ul class="layer-actions"><li><b>Concentrate logged contextual links on near-wins;</b> flavour → parent; log source/target/anchor/date.</li></ul></div>
+  <div class="card"><h4>Layer 5 — Trust &amp; E-E-A-T</h4><ul class="layer-actions"><li><b>Verified entity, named authors/reviewers, original photos, policies;</b> measurable PR; track concrete trust improvements, not a score.</li></ul></div>
+  <div class="card"><h4>Layer 6 — UX/conversion, compliance, freshness &amp; monitoring</h4><ul class="layer-actions"><li><b>Clear compatibility/stock/options on mobile;</b> visible compliance; VPD content; track rankings/citations/traffic/outcomes separately.</li></ul></div>
+</section>
+
+<section id="ck-eeat"><div class="sec-head"><span class="sec-num alt">A</span><h2>E-E-A-T for AI — checklist</h2></div>
+  <div class="checklist">
+    <div class="ck done"><span class="box"></span><span class="txt"><b>Named author/expert page</b> (Salman Essap) + Person schema. <span class="tag t-conf">In progress</span></span></div>
+    <div class="ck done"><span class="box"></span><span class="txt"><b>About rewrite</b> + original photos. <span class="tag t-conf">In progress</span></span></div>
+    <div class="ck"><span class="box"></span><span class="txt"><b>Organization schema with <code>sameAs</code></b> → Companies House, Trustpilot, LinkedIn, socials.</span></div>
+    <div class="ck flag"><span class="box"></span><span class="txt"><b>Align entity details</b> — live footer trades as <b>LOVE VAPING LTD (Co. 11308158, VAT GB295311204)</b>. Confirm with finance, make consistent everywhere. <span class="tag t-conf">Confirmed on live site</span></span></div>
+    <div class="ck"><span class="box"></span><span class="txt"><b>First-hand content</b> — original reviews, real photography, genuine comparisons.</span></div>
+    <div class="ck"><span class="box"></span><span class="txt"><b>Editorial &amp; review policy</b> + last-updated dates + sourcing statement.</span></div>
+    <div class="ck"><span class="box"></span><span class="txt"><b>Genuine third-party reputation</b> — real reviews, legit PR. No inauthentic mentions.</span></div>
+    <div class="ck"><span class="box"></span><span class="txt"><b>Transparent trust details</b> — contact, returns, warranty, recycling, compliance, VAT.</span></div>
+  </div>
+</section>
+
+<section id="ck-tech"><div class="sec-head"><span class="sec-num alt">B</span><h2>Technical SEO for AI — checklist</h2></div>
+  <div class="checklist">
+    <div class="ck flag"><span class="box"></span><span class="txt"><b>Raw-HTML/rendering matrix for P1 URLs</b> — H1/copy/breadcrumbs/links in source, not JS-only.</span></div>
+    <div class="ck"><span class="box"></span><span class="txt"><b>Indexable &amp; snippet-eligible</b> — no stray <code>noindex</code>/<code>nosnippet</code>.</span></div>
+    <div class="ck flag"><span class="box"></span><span class="txt"><b>AI-bot policy</b> — allow <code>OAI-SearchBot</code> &amp; <code>PerplexityBot</code>; decide <code>GPTBot</code> separately; keep Googlebot. <span class="tag t-verify">Pending — Fazil</span></span></div>
+    <div class="ck done"><span class="box"></span><span class="txt"><b>IndexNow + Indexing API.</b> <span class="tag t-conf">Backlog</span></span></div>
+    <div class="ck done"><span class="box"></span><span class="txt"><b>Fix CMS schema field</b> → valid Product/Offer/Review/Breadcrumb/Org markup. <span class="tag t-conf">Backlog</span></span></div>
+    <div class="ck"><span class="box"></span><span class="txt"><b>Validate schema</b> (Rich Results Test); reduce duplicate/faceted URL waste.</span></div>
+    <div class="ck"><span class="box"></span><span class="txt"><b>Merchant Center feed ↔ page parity</b> (verify if configured).</span></div>
+    <div class="ck"><span class="box"></span><span class="txt"><b>Skip llms.txt for Google;</b> monitor the GSC AI Mode dimension.</span></div>
+  </div>
+</section>
+
+<section id="ck-content"><div class="sec-head"><span class="sec-num alt">C</span><h2>Content &amp; Compliance — checklist</h2></div>
+  <p class="muted">Verified on the live SKE Crystal Bar page (25 Jun 2026). P1 quality + legal fixes; add to existing URL tasks, not duplicates.</p>
+  <div class="checklist">
+    <div class="ck flag"><span class="box"></span><span class="txt"><b>Remove single-use framing</b> — "unwrap, inhale and dispose". Single-use vapes banned since 1 Jun 2025; foreground the reusable alternative. <span class="tag t-conf">Confirmed</span></span></div>
+    <div class="ck flag"><span class="box"></span><span class="txt"><b>Remove cessation / "beats a pack of 20" claims.</b> <span class="tag t-conf">Confirmed</span></span></div>
+    <div class="ck flag"><span class="box"></span><span class="txt"><b>Qualify the absolute "leakproof" claim.</b> <span class="tag t-conf">Confirmed</span></span></div>
+    <div class="ck flag"><span class="box"></span><span class="txt"><b>Fix safety-by-reputation FAQ answer.</b> <span class="tag t-conf">Confirmed</span></span></div>
+    <div class="ck flag"><span class="box"></span><span class="txt"><b>Audit Hayati page</b> for "Ban-Proof Certified" &amp; TPD-equals-safe wording. <span class="tag t-verify">Verify live</span></span></div>
+    <div class="ck"><span class="box"></span><span class="txt"><b>Back commercial claims</b> ("Lowest Price Guaranteed", same-day dispatch, £35 free delivery) with policy evidence.</span></div>
+    <div class="ck"><span class="box"></span><span class="txt"><b>Require SKU-level evidence</b> for legality statements; never conflate TPD with safety.</span></div>
+    <div class="ck"><span class="box"></span><span class="txt"><b>Tighten over-optimised/repetitive passages</b> on SKE &amp; Hayati.</span></div>
+  </div>
+</section>
+
+<section id="s5">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Actionable Optimization Plan</h2></div>
+  <p class="muted">Full priority plan below; the consolidated <b>All Actions</b> tab merges this with every checklist and dated task.</p>
+  <p class="legend-inline">I/E/R = High/Medium/Low planning estimates.</p>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Action</th><th>I/E/R</th><th>Owner</th><th>Priority &amp; status</th></tr></thead>
+    <tbody>
+      <tr><td>P1 factual &amp; compliance sweep (SKE, Hayati, Lost Mary + top 20)</td><td class="num">H/M/H</td><td>Olga + Caren + reviewer</td><td><b>P1.</b> Add to existing URL tasks.</td></tr>
+      <tr><td>Rewrite homepage E-E-A-T task around verified trust</td><td class="num">H/L/H</td><td>Olga</td><td><b>P1.</b> Remove entity-score + blanket compliance.</td></tr>
+      <tr><td>Raw-HTML &amp; rendering matrix for P1 URLs</td><td class="num">H/M/M</td><td>Dhruwin + Fazil</td><td><b>P1.</b> In progress.</td></tr>
+      <tr><td>Canonical, breadcrumb &amp; schema completion</td><td class="num">H/M/M</td><td>Fazil + Lukas + reviewer</td><td><b>P1.</b> In progress.</td></tr>
+      <tr><td>Lock P1 cluster architecture</td><td class="num">H/M/L</td><td>Olga + Caren</td><td><b>P1.</b> In progress.</td></tr>
+      <tr><td>Product compatibility &amp; variant data model</td><td class="num">H/M/M</td><td>Caren + product + dev</td><td><b>P1.</b> One verified source.</td></tr>
+      <tr><td>Scale logged contextual internal links</td><td class="num">H/M/L</td><td>Caren + Dhruwin</td><td><b>P1/P2.</b> Focus near-wins.</td></tr>
+      <tr><td>Improve category coverage (competitor gaps)</td><td class="num">H/M/M</td><td>Olga</td><td><b>P2.</b> Where stock/intent/compliance support.</td></tr>
+      <tr><td>Original evidence programme</td><td class="num">M/M/L</td><td>Content/product</td><td><b>P2.</b> Photos, packaging, compat checks.</td></tr>
+      <tr><td>Merchant Center &amp; feed validation</td><td class="num">M/M/M</td><td>Lukas + Fazil</td><td><b>P2.</b> Verify if configured.</td></tr>
+      <tr><td>High-impression CTR testing</td><td class="num">M/L/L</td><td>Olga + reporting</td><td><b>P2.</b> One variable at a time.</td></tr>
+      <tr><td>Selective commercial-page authority building</td><td class="num">M/M/M</td><td>PR/E-E-A-T owner</td><td><b>P2.</b> Existing PR.</td></tr>
+      <tr><td>AI crawler policy</td><td class="num">M/L/M</td><td>Fazil + Lukas + Olga</td><td><b>P2.</b> Search vs training, per-bot.</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Rewrite these three existing ClickUp tasks (don't duplicate)</h3>
+  <div class="checklist">
+    <div class="ck flag"><span class="box"></span><span class="txt"><b>"Rankings – AI and Organic separately using Semrush"</b> → source-defined reporting task.</span></div>
+    <div class="ck flag"><span class="box"></span><span class="txt"><b>"Build agents for SEO SOPs"</b> → 3-agent V1 (task-hygiene, brief, AI-QA) with gates.</span></div>
+    <div class="ck flag"><span class="box"></span><span class="txt"><b>Homepage "AI/LLM tuning"</b> → remove entity-confidence score &amp; blanket compliance.</span></div>
+  </div>
+</section>
+
+<section id="s7">
+  <div class="sec-head"><span class="sec-num">07</span><h2>AI Automation Opportunities</h2></div>
+  <p>Narrow "build agents" to a controlled V1 — everything at once spikes QA load. <span class="tag t-rec">Recommendation</span></p>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Tier</th><th>Use case &amp; output</th><th>Inputs</th><th>Human gate</th><th>Saved</th><th>Pri</th></tr></thead>
+    <tbody>
+      <tr><td>Quick</td><td>Task-hygiene — flags missing owner/URL/keyword/baseline/reviewer</td><td>ClickUp fields</td><td>Olga promotes</td><td>5–10m/task</td><td><span class="b p1">P1</span></td></tr>
+      <tr><td>Quick</td><td>Baseline pack — rank/GSC/metadata/technical snapshot</td><td>URL, SE Ranking, GSC, crawler</td><td>Assignee verifies</td><td>15–30m/pg</td><td><span class="b p1">P1</span></td></tr>
+      <tr><td>Quick</td><td>AI QA pre-check — blockers/warnings</td><td>Brief, staged page, product data</td><td>Human pass/fail</td><td>15–25m/pg</td><td><span class="b p1">P1</span></td></tr>
+      <tr><td>Quick</td><td>Friday reporting draft</td><td>ClickUp, SE Ranking, GSC</td><td>Olga/Caren approve</td><td>1–2h/wk</td><td><span class="b p1">P1</span></td></tr>
+      <tr><td>Medium</td><td>SERP research agent — intent/entities/questions/competitors</td><td>Keywords, UK SERP</td><td>Reviewer validates</td><td>30–45m/pg</td><td><span class="b p1">P1</span></td></tr>
+      <tr><td>Medium</td><td>Brief agent — execution brief</td><td>Research, Cora, product data, SOP</td><td>Olga/SEOSLY approve</td><td>30–60m/pg</td><td><span class="b p1">P1</span></td></tr>
+      <tr><td>Medium</td><td>Internal-link agent</td><td>Crawl, target map, links</td><td>Human verifies</td><td>20–40m/pg</td><td><span class="b p2">P2</span></td></tr>
+      <tr><td>Medium</td><td>Product-data discrepancy check (page vs schema vs feed)</td><td>CMS, schema, feed</td><td>Product/dev fixes</td><td>15–30m/cl</td><td><span class="b p2">P2</span></td></tr>
+      <tr><td>Adv.</td><td>Ranking &amp; GSC anomaly monitor</td><td>SE Ranking, GSC</td><td>Human confirms</td><td>1–2h/wk</td><td><span class="b p2">P2</span></td></tr>
+      <tr><td>Adv.</td><td>Raw-HTML/content regression monitor</td><td>Crawl snapshots</td><td>SEO reviewer</td><td>1–3h/wk</td><td><span class="b p2">P2</span></td></tr>
+      <tr><td>Adv.</td><td>Competitive change summary</td><td>Ahrefs/SE Ranking/SERP</td><td>Strategist selects</td><td>1–2h/mo</td><td><span class="b p3">P3</span></td></tr>
+    </tbody>
+  </table></div>
+  <h3>Must remain human-controlled</h3>
+  <div class="checklist">
+    <div class="ck flag"><span class="box"></span><span class="txt"><b>Never automate:</b> publishing · compliance/legality approval · keyword-to-URL mapping · canonical/redirect decisions · due-date changes · stock/price/fact invention · forum posting · CEO report distribution · page removal/consolidation.</span></div>
+    <div class="ck"><span class="box"></span><span class="txt"><b>Safeguards:</b> prompt version + input snapshot + output link; AI writes to a comment/field, never overwrites approved content; idempotency keys; visible "Failed Automation" state; no PII to an LLM without an approved route.</span></div>
+  </div>
+</section>
+
+<section id="s8">
+  <div class="sec-head"><span class="sec-num">08</span><h2>AI Search Data &amp; Monitoring</h2></div>
+  <h3>Reconcile the three AI signals first</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Tool</th><th>What it measures</th><th>ChatGPT reading</th></tr></thead>
+    <tbody>
+      <tr><td>SE Ranking (UK prompt DB)</td><td>Presence in a configured prompt set</td><td class="num">0 brand · 0 link</td></tr>
+      <tr><td>Ahrefs (citation index)</td><td>Citation links across AI answers</td><td class="num">309 citations</td></tr>
+      <tr class="me"><td>GA4 (first-party)</td><td>Actual referral sessions + conversions</td><td class="num">1,391 sessions · 58 key events</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted" style="font-size:.85rem"><strong>Conclusion:</strong> ChatGPT presence is real and converting. SE Ranking's "0" reflects configured-prompt coverage, not reality. <span class="tag t-conf">Confirmed</span></p>
+  <h3>Real baseline — GA4 AI referrals, last 3 months <span class="tag t-conf">first-party</span></h3>
+  <div class="bars">
+    <div class="bar-row"><span class="name">ChatGPT</span><span class="bar-track"><span class="bar-fill" style="width:100%"></span></span><span class="v">1,391</span></div>
+    <div class="bar-row"><span class="name">Perplexity</span><span class="bar-track"><span class="bar-fill" style="width:3.2%"></span></span><span class="v">45</span></div>
+    <div class="bar-row"><span class="name">Gemini</span><span class="bar-track"><span class="bar-fill" style="width:1.3%"></span></span><span class="v">18</span></div>
+    <div class="bar-row"><span class="name">Claude</span><span class="bar-track"><span class="bar-fill" style="width:0.9%"></span></span><span class="v">12</span></div>
+    <div class="bar-row"><span class="name">Copilot</span><span class="bar-track"><span class="bar-fill" style="width:0.7%"></span></span><span class="v">10</span></div>
+  </div>
+  <p class="muted" style="font-size:.85rem">ChatGPT ≈94% of AI sessions and the only meaningful converter (58 key events). Perplexity cites heavily but sends little traffic — citation ≠ click.</p>
+  <h4>SE Ranking AI engine breakdown</h4>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Engine</th><th>Brand</th><th>Link</th><th>Avg position</th></tr></thead>
+    <tbody>
+      <tr><td>Google AI Overviews</td><td class="num">82</td><td class="num">182</td><td class="num">5.65</td></tr>
+      <tr><td>Google AI Mode</td><td class="num">4</td><td class="num">14</td><td class="num">n/a yet</td></tr>
+      <tr><td>ChatGPT</td><td class="num">0</td><td class="num">0</td><td class="num">—</td></tr>
+      <tr><td>Perplexity</td><td class="num">0</td><td class="num">10</td><td class="num">—</td></tr>
+      <tr><td>Gemini</td><td class="num">0</td><td class="num">2</td><td class="num">—</td></tr>
+    </tbody>
+  </table></div>
+  <h3>8.1 · 75-prompt benchmark</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Group</th><th>#</th><th>Intent</th></tr></thead>
+    <tbody>
+      <tr><td>Brand &amp; reputation</td><td class="num">10</td><td>Trust, delivery, range, reviews</td></tr>
+      <tr><td>P1 product &amp; compatibility</td><td class="num">25</td><td>Lost Mary, SKE, Hayati device/pod</td></tr>
+      <tr><td>Category &amp; selection</td><td class="num">15</td><td>Prefilled/refillable pods, kits, nic salts</td></tr>
+      <tr><td>Comparisons &amp; alternatives</td><td class="num">10</td><td>Differences, reusable alternatives</td></tr>
+      <tr><td>Support &amp; factual</td><td class="num">10</td><td>Setup, storage, compatibility, replacement</td></tr>
+      <tr><td>Post-purchase / troubleshooting</td><td class="num">5</td><td>Pod changes, charging, leaks</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted"><b>Each prompt record:</b> audience &amp; intent · target URL · brand/theme · compliance risk · expected answer type · competitors expected · UK location &amp; engine · date added &amp; review date.</p>
+  <h3>8.2 · Track ten separate measures (never one score)</h3>
+  <div class="grid2">
+    <ol class="muted"><li>Answer generated.</li><li>Brand mention.</li><li>Citation/link.</li><li>Cited URL type.</li><li>Citation position.</li></ol>
+    <ol class="muted" start="6"><li>Competitor inclusion.</li><li>Answer accuracy.</li><li>Compliance risk.</li><li>Referral visit.</li><li>On-site outcome.</li></ol>
+  </div>
+  <h3>8.3 · Cadence</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Activity</th><th>Cadence</th></tr></thead>
+    <tbody>
+      <tr><td>Fixed 75-prompt run</td><td>Weekly</td></tr>
+      <tr><td>Manual QA of 15–20 answers</td><td>Weekly</td></tr>
+      <tr><td>Three repeated runs of 20 core prompts</td><td>Monthly</td></tr>
+      <tr><td>Copilot manual benchmark</td><td>Monthly until tool support</td></tr>
+      <tr><td>Prompt expansion/removal</td><td>Monthly</td></tr>
+      <tr><td>AI crawler &amp; referral review</td><td>Monthly</td></tr>
+      <tr><td>Executive trend review</td><td>Monthly (4-week averages)</td></tr>
+      <tr><td>Full prompt-set reset</td><td>Quarterly</td></tr>
+    </tbody>
+  </table></div>
+  <h3>8.4 · GA4 referral tracking</h3>
+  <p class="muted">Create an <b>AI Assistants</b> custom channel (Google's official example): regex of known AI sources, placed above Referrals, updated as platforms change. Track sessions &amp; users · landing pages · engaged sessions · add-to-cart &amp; checkout · transactions/revenue where attributed · new vs returning · platform/source. GA4 only sees clicks with identifiable referrers — in-platform answers stay invisible. <span class="tag t-conf">Confirmed</span></p>
+  <h3>8.5 · Interpretation rules</h3>
+  <div class="grid2">
+    <ul class="muted"><li>Same prompts/engines/locale/schedule across periods.</li><li>Report 4-week rolling averages.</li><li>Separate brand mentions from citations.</li><li>Review relevance &amp; false positives.</li></ul>
+    <ul class="muted"><li>Compare competitors only within the same set.</li><li>Don't call a vendor "avg position" a universal AI rank.</li><li>Annotate major changes.</li><li>Correlation ≠ causation.</li></ul>
+  </div>
+  <h3>8.6 · AI crawler policy — checklist</h3>
+  <div class="checklist">
+    <div class="ck"><span class="box"></span><span class="txt"><b>No blanket allow/block;</b> separate search visibility from training.</span></div>
+    <div class="ck"><span class="box"></span><span class="txt"><b>Allow <code>OAI-SearchBot</code></b> for ChatGPT visibility; <b>decide <code>GPTBot</code> separately</b>; keep Googlebot.</span></div>
+    <div class="ck"><span class="box"></span><span class="txt"><b>Quantify load</b> via Cloudflare/logs; verify UAs &amp; IP ranges; rate-limit abuse, don't block all.</span></div>
+    <div class="ck"><span class="box"></span><span class="txt"><b>Recheck</b> indexability &amp; AI visibility after any robots.txt change.</span></div>
+  </div>
+</section>
+
+<section id="s9">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Risks, Challenges &amp; Myths</h2></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Myth / risk</th><th>Reality</th><th>Response</th></tr></thead>
+    <tbody>
+      <tr><td>"AI SEO is separate from SEO"</td><td>Generative features use core Search</td><td>Add measurement; no duplicate strategy</td></tr>
+      <tr><td>"llms.txt boosts Google AI"</td><td>Google ignores it</td><td>Don't prioritise</td></tr>
+      <tr><td>"Chunk content for AI"</td><td>No such requirement</td><td>Sections that help users</td></tr>
+      <tr><td>"Every page needs an AI rewrite"</td><td>Special wording unnecessary</td><td>Rewrite only where quality requires</td></tr>
+      <tr><td>"Special AI schema required"</td><td>None exists</td><td>Valid markup matching visible content</td></tr>
+      <tr><td>"E-E-A-T has a score"</td><td>Not a ranking factor</td><td>Track concrete trust improvements</td></tr>
+      <tr><td>"Forum mentions force citations"</td><td>Google warns vs inauthentic mentions</td><td>Participate transparently</td></tr>
+      <tr><td>"AI citations = rank tracking"</td><td>Vary by prompt/run/engine</td><td>Fixed cohorts + repeats</td></tr>
+      <tr><td>"Block all AI bots, free"</td><td>Search vs training differ</td><td>Per-crawler policy</td></tr>
+      <tr><td>"High DR = done"</td><td>Coverage much smaller</td><td>Architecture, coverage, quality</td></tr>
+      <tr><td>"TPD compliant = safe"</td><td>Compliance ≠ safety</td><td>Remove wording; SKU evidence</td></tr>
+      <tr><td>"Ban-proof" is official</td><td>Not a real status</td><td>Describe reusable features precisely</td></tr>
+      <tr><td>"Vape is suppressed in AI"</td><td>Hundreds of citations (Gemini aside)</td><td>Defend &amp; grow; watch Gemini</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="s10">
+  <div class="sec-head"><span class="sec-num">10</span><h2>Three-Month Roadmap</h2></div>
+  <h4>25 Jun – 7 Jul · Stabilise &amp; baseline</h4>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Item</th><th>Pri</th><th>E/R</th><th>Next action</th></tr></thead>
+    <tbody>
+      <tr><td>Rewrite the 3 AI-related ClickUp tasks</td><td>P1</td><td>L/M</td><td>Olga + Lukas define outcomes/inputs/owners/QA</td></tr>
+      <tr><td>Correct critical SKE &amp; Hayati copy</td><td>P1</td><td>M/H</td><td>Product/legal evidence + approval</td></tr>
+      <tr><td>Configure first 75 AI prompts</td><td>P1</td><td>M/L</td><td>Approve groups &amp; URLs</td></tr>
+      <tr><td>Create GA4 AI Assistants channel</td><td>P1</td><td>L/L</td><td>GA4 admin access</td></tr>
+      <tr><td>P1 raw-HTML/canonical/schema matrix</td><td>P1</td><td>M/M</td><td>Dev &amp; staging access</td></tr>
+      <tr><td>Lock P1 cluster maps</td><td>P1</td><td>M/L</td><td>Approved mapping + stock</td></tr>
+    </tbody>
+  </table></div>
+  <h4>8 Jul – 4 Aug · Grow with controlled automation</h4>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Item</th><th>Pri</th><th>E/R</th><th>Next action</th></tr></thead>
+    <tbody>
+      <tr><td>Deploy task-hygiene, brief &amp; AI-QA agents V1</td><td>P1</td><td>M/M</td><td>Approved inputs + gates</td></tr>
+      <tr><td>Scale Lost Mary, SKE, Hayati optimisation</td><td>P1</td><td>H/M</td><td>QA queue under WIP limit</td></tr>
+      <tr><td>Complete internal-linking batch</td><td>P1</td><td>M/L</td><td>Approved maps + URLs</td></tr>
+      <tr><td>Validate product data + Merchant Center</td><td>P2</td><td>M/M</td><td>Product + dev access</td></tr>
+      <tr><td>Begin high-impression CTR tests</td><td>P2</td><td>L/L</td><td>GSC baseline, one variable</td></tr>
+      <tr><td>Start weekly AI visibility reporting</td><td>P2</td><td>L/M</td><td>Min 4 weeks before trends</td></tr>
+    </tbody>
+  </table></div>
+  <h4>5 Aug – 1 Sep · Scale near-wins</h4>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Item</th><th>Pri</th><th>E/R</th><th>Next action</th></tr></thead>
+    <tbody>
+      <tr><td>Select 10–20 Top-3 candidates</td><td>P1</td><td>M/L</td><td>Rank/traffic/stock/tech readiness</td></tr>
+      <tr><td>Re-optimise 10–15 near-win pages</td><td>P1</td><td>H/M</td><td>Cora/deeper analysis where justified</td></tr>
+      <tr><td>Focused internal links + selective authority</td><td>P1</td><td>M/M</td><td>Page-level gap analysis</td></tr>
+      <tr><td>Review AI visibility vs organic</td><td>P2</td><td>M/M</td><td>Same cohort + annotations</td></tr>
+      <tr><td>Evaluate agent accuracy &amp; time savings</td><td>P2</td><td>L/L</td><td>10+ completed tasks/workflow</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted" style="font-size:.84rem"><b>2–25 Sep · Consolidate:</b> 90-day evidence review · output vs outcomes · retire noisy prompts/automations · confirm category gaps for new pages · promote workflows to SOPs · build next-quarter backlog.</p>
+</section>
+
+<section id="s11">
+  <div class="sec-head"><span class="sec-num">11</span><h2>Six-Month Roadmap</h2></div>
+  <h4>26 Sep – 31 Oct</h4>
+  <ul class="muted">
+    <li>Expand templates to IVG, Elux, Bar Juice, Elfliq, Elf Bar, Pyne Pod.</li>
+    <li>Complete product-data governance (CMS, page, schema, feeds).</li>
+    <li><strong>Verified legal/policy/price/content review before October &amp; Vaping Products Duty changes (live 1 Oct 2026).</strong></li>
+    <li>Automated content-regression &amp; raw-HTML monitoring; build compatibility dataset.</li>
+    <li>Expand AI monitoring to Copilot if tooling allows.</li>
+  </ul>
+  <h4>November</h4>
+  <ul class="muted">
+    <li>Create only pages justified by validated gaps; original comparison/selection assets tied to money pages.</li>
+    <li>Selective manufacturer/vendor/expert/recycling authority; structured author/reviewer info.</li>
+    <li>Use AI monitoring to find recurring questions/gaps — not to mass-produce pages.</li>
+    <li>Monthly competitive-change report (organic, links, AI citations).</li>
+  </ul>
+  <h4>December</h4>
+  <ul class="muted">
+    <li>One reporting layer (rankings, AI visibility, GA4 referrals, conversions) with separate definitions.</li>
+    <li>Decide if Semrush / Ahrefs Brand Radar justify cost.</li>
+    <li>Automated alerts: ranking drops, deindexation, canonical changes, missing raw-HTML content, schema/feed mismatches, AI-answer inaccuracies.</li>
+    <li>Build the next six-month roadmap from measurable outcomes.</li>
+  </ul>
+</section>
+
+<section id="s12">
+  <div class="sec-head"><span class="sec-num">12</span><h2>Immediate Next Actions</h2></div>
+  <p class="muted">Proposed dates — don't silently change committed dates; use the Proposed Date field, agree at the Tuesday review.</p>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>ClickUp action</th><th>Owner</th><th>Proposed</th><th>Done when</th></tr></thead>
+    <tbody>
+      <tr><td>Rewrite "Rankings – AI and Organic separately using Semrush"</td><td>Lukas</td><td class="num">30 Jun</td><td>Organic &amp; AI metrics, tools, freshness, limits defined</td></tr>
+      <tr><td>Rewrite "Build agents for SEO SOPs" → 3-agent V1</td><td>Olga + Lukas</td><td class="num">30 Jun</td><td>Triggers, inputs, outputs, human gates</td></tr>
+      <tr><td>Replace homepage "AI/LLM tuning" assumptions</td><td>Olga</td><td class="num">27 Jun</td><td>Entity-score &amp; blanket-compliance removed</td></tr>
+      <tr><td>Launch P1 compliance &amp; factual-quality review</td><td>Olga + Caren</td><td class="num">30 Jun</td><td>SKE &amp; Hayati corrected; top 20 triaged</td></tr>
+      <tr><td>Configure first 75 SE Ranking AI prompts</td><td>Lukas</td><td class="num">2 Jul</td><td>All 5 engines have approved groups &amp; URLs</td></tr>
+      <tr><td>Create GA4 AI Assistants custom channel</td><td>Lukas</td><td class="num">2 Jul</td><td>Above Referrals, tested vs sources</td></tr>
+      <tr><td>Complete P1 raw-HTML/canonical/schema matrix</td><td>Dhruwin + Fazil</td><td class="num">3 Jul</td><td>Every P1 URL pass/fail + owned fixes</td></tr>
+      <tr><td>Lock Lost Mary, SKE, Hayati cluster maps</td><td>Olga + Caren</td><td class="num">7 Jul</td><td>One URL per intent; cannibalisation logged</td></tr>
+      <tr><td>Confirm entity (LOVE VAPING LTD) + Semrush/Brand Radar access</td><td>Olga + Lukas + finance</td><td class="num">7 Jul</td><td>Entity confirmed; access restored or skipped</td></tr>
+      <tr><td>Publish first combined baseline</td><td>Lukas; Olga approves</td><td class="num">8 Jul</td><td>Organic, AI, referrals &amp; limits shown separately</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout"><h4>The priority</h4><p>Not more "AI SEO" activity — make the existing work measurable, factual, technically retrievable and reliably executable, and defend the AI footprint you already have.</p></div>
+</section>
+
+</div><!-- /strategy -->
+
+<!-- ============ ALL ACTIONS VIEW ============ -->
+<div id="view-actions" class="view">
+  <section style="border-top:none;margin-top:6px;padding-top:30px">
+    <div class="sec-head"><span class="sec-num">✓</span><h2>All Actions — master list</h2></div>
+    <p class="muted">Every action from the priority plan, the three checklists, automation, monitoring, competitive and the dated next-actions — in one place, grouped by area. Filter by priority:</p>
+    <div class="filterbar" id="filterbar">
+      <span>Show:</span>
+      <button class="fbtn active" data-f="all">All</button>
+      <button class="fbtn" data-f="P1">P1 only</button>
+      <button class="fbtn" data-f="P2">P2+</button>
+    </div>
+    <div class="tbl-wrap"><table id="actions-table">
+      <thead><tr><th>Action</th><th>Owner</th><th>Pri</th><th>When / status</th></tr></thead>
+      <tbody>
+        <tr class="grp"><td colspan="4">Immediate · dated</td></tr>
+        <tr data-pri="P1"><td>Rewrite "Rankings – AI &amp; Organic (Semrush)" as a source-defined reporting task</td><td>Lukas</td><td><span class="b p1">P1</span></td><td class="num">30 Jun</td></tr>
+        <tr data-pri="P1"><td>Rewrite "Build agents for SEO SOPs" → 3-agent V1 (task-hygiene, brief, AI-QA)</td><td>Olga + Lukas</td><td><span class="b p1">P1</span></td><td class="num">30 Jun</td></tr>
+        <tr data-pri="P1"><td>Replace homepage "AI/LLM tuning" assumptions with verified trust work</td><td>Olga</td><td><span class="b p1">P1</span></td><td class="num">27 Jun</td></tr>
+        <tr data-pri="P1"><td>Launch P1 compliance &amp; factual-quality review (SKE, Hayati, top 20)</td><td>Olga + Caren</td><td><span class="b p1">P1</span></td><td class="num">30 Jun</td></tr>
+        <tr data-pri="P1"><td>Configure first 75 SE Ranking AI prompts</td><td>Lukas</td><td><span class="b p1">P1</span></td><td class="num">2 Jul</td></tr>
+        <tr data-pri="P1"><td>Create GA4 AI Assistants custom channel</td><td>Lukas</td><td><span class="b p1">P1</span></td><td class="num">2 Jul</td></tr>
+        <tr data-pri="P1"><td>Complete P1 raw-HTML / canonical / schema matrix</td><td>Dhruwin + Fazil</td><td><span class="b p1">P1</span></td><td class="num">3 Jul</td></tr>
+        <tr data-pri="P1"><td>Lock Lost Mary / SKE / Hayati cluster maps</td><td>Olga + Caren</td><td><span class="b p1">P1</span></td><td class="num">7 Jul</td></tr>
+        <tr data-pri="P1"><td>Confirm operative entity (LOVE VAPING LTD) + decide Semrush/Brand Radar access</td><td>Olga + Lukas + finance</td><td><span class="b p1">P1</span></td><td class="num">7 Jul</td></tr>
+        <tr data-pri="P1"><td>Publish first combined baseline (organic, AI, referrals, limits separate)</td><td>Lukas; Olga approves</td><td><span class="b p1">P1</span></td><td class="num">8 Jul</td></tr>
+
+        <tr class="grp"><td colspan="4">Technical SEO</td></tr>
+        <tr data-pri="P1"><td>Confirm H1 / copy / breadcrumbs / links exist in raw HTML (P1 templates)</td><td>Dhruwin + Fazil</td><td><span class="b p1">P1</span></td><td><span class="b st-prog">In progress</span></td></tr>
+        <tr data-pri="P1"><td>Fix CMS schema edit field (unblocks structured data at scale)</td><td>Fazil</td><td><span class="b p1">P1</span></td><td><span class="b st-back">Backlog</span></td></tr>
+        <tr data-pri="P2"><td>Ship IndexNow + Google Indexing API</td><td>Fazil</td><td><span class="b p2">P2</span></td><td><span class="b st-back">Backlog</span></td></tr>
+        <tr data-pri="P2"><td>Roll out Product/Offer/Review/Breadcrumb/Org schema; validate (Rich Results Test)</td><td>Fazil + Lukas</td><td><span class="b p2">P2</span></td><td><span class="b st-new">New</span></td></tr>
+        <tr data-pri="P2"><td>Reduce duplicate/faceted URL waste; protect crawl budget</td><td>Fazil</td><td><span class="b p2">P2</span></td><td><span class="b st-new">New</span></td></tr>
+        <tr data-pri="P2"><td>Merchant Center feed ↔ visible-page parity</td><td>Lukas + Fazil</td><td><span class="b p2">P2</span></td><td><span class="b st-new">Verify</span></td></tr>
+        <tr data-pri="P2"><td>Decide AI-bot policy (allow OAI-SearchBot &amp; PerplexityBot; GPTBot separate)</td><td>Fazil + Lukas + Olga</td><td><span class="b p2">P2</span></td><td><span class="b st-new">Pending</span></td></tr>
+
+        <tr class="grp"><td colspan="4">Content &amp; Compliance (verified on live SKE page)</td></tr>
+        <tr data-pri="P1"><td>Remove single-use "dispose" framing; foreground reusable alternative</td><td>Olga + Caren + legal</td><td><span class="b p1">P1</span></td><td><span class="b st-new">New</span></td></tr>
+        <tr data-pri="P1"><td>Remove cessation / "beats a pack of 20" claims</td><td>Olga + Caren + legal</td><td><span class="b p1">P1</span></td><td><span class="b st-new">New</span></td></tr>
+        <tr data-pri="P1"><td>Qualify the absolute "leakproof" claim</td><td>Caren</td><td><span class="b p1">P1</span></td><td><span class="b st-new">New</span></td></tr>
+        <tr data-pri="P1"><td>Fix safety-by-reputation FAQ answer</td><td>Caren</td><td><span class="b p1">P1</span></td><td><span class="b st-new">New</span></td></tr>
+        <tr data-pri="P1"><td>Audit Hayati page for "Ban-Proof Certified" / TPD-equals-safe wording</td><td>Olga + legal</td><td><span class="b p1">P1</span></td><td><span class="b st-new">Verify</span></td></tr>
+        <tr data-pri="P2"><td>Back commercial claims (lowest-price, dispatch, £35) with policy evidence</td><td>Caren</td><td><span class="b p2">P2</span></td><td><span class="b st-new">New</span></td></tr>
+        <tr data-pri="P2"><td>Require SKU-level evidence for legality statements</td><td>Product + legal</td><td><span class="b p2">P2</span></td><td><span class="b st-new">New</span></td></tr>
+        <tr data-pri="P2"><td>Tighten over-optimised / repetitive passages (SKE, Hayati)</td><td>Caren</td><td><span class="b p2">P2</span></td><td><span class="b st-new">New</span></td></tr>
+
+        <tr class="grp"><td colspan="4">E-E-A-T &amp; Brand authority</td></tr>
+        <tr data-pri="P1"><td>Author/expert page (Salman Essap) + Person schema</td><td>EEAT + dev</td><td><span class="b p1">P1</span></td><td><span class="b st-prog">In progress</span></td></tr>
+        <tr data-pri="P1"><td>Align entity details to LOVE VAPING LTD everywhere</td><td>Olga + finance</td><td><span class="b p1">P1</span></td><td><span class="b st-new">New</span></td></tr>
+        <tr data-pri="P2"><td>About rewrite + original photos</td><td>EEAT</td><td><span class="b p2">P2</span></td><td><span class="b st-prog">In progress</span></td></tr>
+        <tr data-pri="P2"><td>Organization schema with sameAs (Companies House, Trustpilot, socials)</td><td>Dev</td><td><span class="b p2">P2</span></td><td><span class="b st-new">New</span></td></tr>
+        <tr data-pri="P2"><td>Editorial &amp; review policy + sourcing statement + last-updated dates</td><td>Content</td><td><span class="b p2">P2</span></td><td><span class="b st-new">New</span></td></tr>
+        <tr data-pri="P2"><td>Turn "PR Information" into a measurable authority plan</td><td>PR / EEAT owner</td><td><span class="b p2">P2</span></td><td><span class="b st-prog">Existing</span></td></tr>
+
+        <tr class="grp"><td colspan="4">Architecture, product data &amp; content</td></tr>
+        <tr data-pri="P1"><td>Lock P1 cluster architecture (parent/child, cannibalisation)</td><td>Olga + Caren</td><td><span class="b p1">P1</span></td><td><span class="b st-prog">In progress</span></td></tr>
+        <tr data-pri="P1"><td>Deep-overhaul P1 family pages (Lost Mary BM6000 etc.)</td><td>SEO + dev</td><td><span class="b p1">P1</span></td><td><span class="b st-prog">In progress</span></td></tr>
+        <tr data-pri="P1"><td>New collection pages for unserved high-intent clusters</td><td>SEO + dev</td><td><span class="b p1">P1</span></td><td><span class="b st-prog">In progress</span></td></tr>
+        <tr data-pri="P1"><td>Product compatibility &amp; variant data model (one verified source)</td><td>Caren + product + dev</td><td><span class="b p1">P1</span></td><td><span class="b st-new">New</span></td></tr>
+        <tr data-pri="P1"><td>Scale logged contextual internal links (focus near-wins)</td><td>Caren + Dhruwin</td><td><span class="b p1">P1</span></td><td><span class="b st-prog">In progress</span></td></tr>
+        <tr data-pri="P1"><td>Vape Tax Calculator standalone page (VPD-timely)</td><td>SEO + dev + legal</td><td><span class="b p1">P1</span></td><td><span class="b st-prog">In progress</span></td></tr>
+        <tr data-pri="P2"><td>Improve category coverage from filtered competitor gaps</td><td>Olga</td><td><span class="b p2">P2</span></td><td><span class="b st-new">New</span></td></tr>
+        <tr data-pri="P2"><td>Original evidence programme (photos, packaging, compat, reviewer notes)</td><td>Content / product</td><td><span class="b p2">P2</span></td><td><span class="b st-prog">Existing</span></td></tr>
+        <tr data-pri="P2"><td>High-impression CTR testing (one variable, retain baselines)</td><td>Olga + reporting</td><td><span class="b p2">P2</span></td><td><span class="b st-new">Planned</span></td></tr>
+
+        <tr class="grp"><td colspan="4">Competitive analysis</td></tr>
+        <tr data-pri="P1"><td>Run content/keyword-gap export on P1 families (Ahrefs + Semrush)</td><td>Olga</td><td><span class="b p1">P1</span></td><td><span class="b st-new">New</span></td></tr>
+        <tr data-pri="P2"><td>Map competitor pages by intent; check parity vs our URLs</td><td>Olga</td><td><span class="b p2">P2</span></td><td><span class="b st-new">New</span></td></tr>
+        <tr data-pri="P2"><td>Cited-pages gap (Brand Radar) — AI-cited pages we lack equivalents for</td><td>Olga</td><td><span class="b p2">P2</span></td><td><span class="b st-new">New</span></td></tr>
+        <tr data-pri="P3"><td>Monthly competitive-change report (organic, links, AI citations)</td><td>Reporting</td><td><span class="b p3">P3</span></td><td><span class="b st-new">6-month</span></td></tr>
+
+        <tr class="grp"><td colspan="4">Automation (QA-gated)</td></tr>
+        <tr data-pri="P1"><td>Ship V1 = task-hygiene + brief + AI-QA agents</td><td>Olga + Lukas</td><td><span class="b p1">P1</span></td><td><span class="b st-new">Jul</span></td></tr>
+        <tr data-pri="P1"><td>Pilot agents on 3 P1 pages; score vs human brief</td><td>Olga</td><td><span class="b p1">P1</span></td><td><span class="b st-new">Jul</span></td></tr>
+        <tr data-pri="P1"><td>Build safeguards (versioning, no-overwrite, idempotency, fail state)</td><td>Lukas</td><td><span class="b p1">P1</span></td><td><span class="b st-new">Jul</span></td></tr>
+        <tr data-pri="P2"><td>Medium agents: internal-link, product-data discrepancy check</td><td>Lukas</td><td><span class="b p2">P2</span></td><td><span class="b st-new">1–3 mo</span></td></tr>
+        <tr data-pri="P3"><td>Advanced monitors: ranking/GSC, raw-HTML regression, competitive</td><td>Lukas</td><td><span class="b p3">P3</span></td><td><span class="b st-new">3–6 mo</span></td></tr>
+
+        <tr class="grp"><td colspan="4">AI search monitoring</td></tr>
+        <tr data-pri="P1"><td>Configure seoCrawl AI Tracker prompts (currently 0)</td><td>Lukas</td><td><span class="b p1">P1</span></td><td><span class="b st-new">New</span></td></tr>
+        <tr data-pri="P2"><td>Open GSC AI Mode dimension</td><td>Lukas</td><td><span class="b p2">P2</span></td><td><span class="b st-new">New</span></td></tr>
+        <tr data-pri="P2"><td>Track 10 separate measures; weekly run + manual QA</td><td>Lukas</td><td><span class="b p2">P2</span></td><td><span class="b st-new">Ongoing</span></td></tr>
+        <tr data-pri="P2"><td>Monthly trend on 4-week averages; quarterly prompt reset</td><td>Olga + Lukas</td><td><span class="b p2">P2</span></td><td><span class="b st-new">Ongoing</span></td></tr>
+      </tbody>
+    </table></div>
+    <p class="muted" style="font-size:.84rem">Priorities/owners/dates are planning estimates from this strategy. Dated items are proposals — agree committed dates at the Tuesday review.</p>
+  </section>
+</div><!-- /actions -->
+
+<!-- ============ COMPETITIVE VIEW ============ -->
+<div id="view-competitive" class="view">
+  <section style="border-top:none;margin-top:6px;padding-top:30px">
+    <div class="sec-head"><span class="sec-num">06</span><h2>Competitive Analysis</h2></div>
+    <p><span class="tag t-conf">Confirmed</span> Live Ahrefs UK metrics + SE Ranking UK AI leaderboard, 25 Jun 2026. Ahrefs traffic/keywords are modelled estimates; AI SOV is from SE Ranking's selected prompt corpus, not the whole AI market.</p>
+
+    <h3>Organic + AI share of voice</h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Domain</th><th>Ahrefs traffic</th><th>Org kw</th><th>Top-3</th><th>DR</th><th>Ref. domains</th><th>SE Ranking AI SOV</th></tr></thead>
+      <tbody>
+        <tr class="me"><td>Vape &amp; Go</td><td class="num">36,001</td><td class="num">2,404</td><td class="num">831</td><td class="num">64</td><td class="num">1,327</td><td class="hl">2.85%</td></tr>
+        <tr><td>Vape Connect</td><td class="num">15,767</td><td class="num">781</td><td class="num">154</td><td class="num">54</td><td class="num">771</td><td class="num">0.55%</td></tr>
+        <tr><td>Vape UK</td><td class="num">393,477</td><td class="num">8,951</td><td class="num">3,943</td><td class="num">65</td><td class="num">2,042</td><td class="num">9.46%</td></tr>
+        <tr><td>Vape Superstore</td><td class="num">169,508</td><td class="num">6,411</td><td class="num">2,911</td><td class="num">62</td><td class="num">2,241</td><td class="num">3.00%</td></tr>
+        <tr><td>Vape Club</td><td class="num">230,834</td><td class="num">9,731</td><td class="num">3,835</td><td class="num">71</td><td class="num">3,435</td><td class="num">14.52%</td></tr>
+        <tr><td>Totally Wicked</td><td class="num">113,427</td><td class="num">6,345</td><td class="num">2,307</td><td class="num">53</td><td class="num">1,838</td><td class="num">5.53%</td></tr>
+      </tbody>
+    </table></div>
+    <div class="bars">
+      <div class="bar-row"><span class="name">Vape Club</span><span class="bar-track"><span class="bar-fill" style="width:100%"></span></span><span class="v">14.5%</span></div>
+      <div class="bar-row"><span class="name">Vape UK</span><span class="bar-track"><span class="bar-fill" style="width:65%"></span></span><span class="v">9.5%</span></div>
+      <div class="bar-row"><span class="name">Totally Wicked</span><span class="bar-track"><span class="bar-fill" style="width:38%"></span></span><span class="v">5.5%</span></div>
+      <div class="bar-row"><span class="name">Vape Superstore</span><span class="bar-track"><span class="bar-fill" style="width:21%"></span></span><span class="v">3.0%</span></div>
+      <div class="bar-row me"><span class="name">Vape &amp; Go</span><span class="bar-track"><span class="bar-fill" style="width:20%"></span></span><span class="v">2.85%</span></div>
+      <div class="bar-row"><span class="name">Vape Connect</span><span class="bar-track"><span class="bar-fill" style="width:4%"></span></span><span class="v">0.55%</span></div>
+    </div>
+
+    <h3>What the benchmark means</h3>
+    <div class="grid2">
+      <div class="card"><p class="muted" style="margin:0"><b>Vape UK</b> leads organic; its advantage far exceeds the small DR difference → a much broader, stronger ranking-page portfolio. <b>Vape Club</b> leads the AI benchmark &amp; link authority; product/pod/refill/brand-subcategory architecture is particularly visible.</p></div>
+      <div class="card"><p class="muted" style="margin:0"><b>Vape Superstore</b> pairs broad categories with useful editorial. <b>Totally Wicked</b> has lower DR than Vape &amp; Go but more coverage &amp; AI SOV — brand recognition &amp; breadth matter. <b>Vape Connect</b> is the only competitor below Vape &amp; Go on both.</p></div>
+    </div>
+    <p class="muted">Inference: the leaders gain from strong category &amp; product-family architecture, whereas Vape &amp; Go's leading set is more fragmented across legacy products, nic-salt brand pages and selected articles. <span class="tag t-assume">Assumption</span></p>
+
+    <h3>Second AI view — Ahrefs citation index</h3>
+    <p class="muted">Different method from SOV, both useful. On total citations, Vape &amp; Go (1,228) sits closer to the pack than its organic traffic does — strong on ChatGPT (309, 2nd) &amp; Perplexity (256); weak on Gemini (9) &amp; Grok (91).</p>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Platform (citations)</th><th>Vape &amp; Go</th><th>Vape UK</th><th>Vape Club</th><th>Vape Superstore</th><th>Totally Wicked</th><th>Vape Connect</th></tr></thead>
+      <tbody>
+        <tr><td>ChatGPT</td><td class="hl">309</td><td class="num">132</td><td class="num">287</td><td class="num">533</td><td class="num">47</td><td class="num">265</td></tr>
+        <tr><td>Perplexity</td><td class="hl">256</td><td class="num">225</td><td class="num">365</td><td class="num">227</td><td class="num">142</td><td class="num">43</td></tr>
+        <tr><td>Google AI Overviews</td><td class="hl">277</td><td class="num">593</td><td class="num">377</td><td class="num">819</td><td class="num">365</td><td class="num">107</td></tr>
+        <tr><td>Google AI Mode</td><td class="hl">227</td><td class="num">632</td><td class="num">428</td><td class="num">767</td><td class="num">373</td><td class="num">119</td></tr>
+        <tr><td>Grok</td><td class="hl">91</td><td class="num">255</td><td class="num">251</td><td class="num">550</td><td class="num">366</td><td class="num">31</td></tr>
+        <tr><td>Copilot</td><td class="hl">59</td><td class="num">58</td><td class="num">91</td><td class="num">171</td><td class="num">19</td><td class="num">72</td></tr>
+        <tr><td>Gemini</td><td class="hl">9</td><td class="num">24</td><td class="num">30</td><td class="num">128</td><td class="num">24</td><td class="num">0</td></tr>
+        <tr class="me"><td><b>Total</b></td><td class="hl">1,228</td><td class="num">1,919</td><td class="num">1,829</td><td class="num">3,195</td><td class="num">1,336</td><td class="num">637</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Two AI lenses, side by side</h3>
+    <div class="card accent"><p class="muted" style="margin:0">SE Ranking SOV (prompt-based) ranks Vape &amp; Go 5th (2.85%); Ahrefs citations (index-based) also rank it 5th (1,228) but much closer to the pack. They measure different things — <b>use both, trend each separately, and never average them.</b> GA4 referrals are the first-party tie-breaker on what actually converts. <span class="tag t-rec">Recommendation</span></p></div>
+
+    <h3>Recommended competitor-analysis process (per P1 cluster)</h3>
+    <div class="checklist">
+      <div class="ck"><span class="box"></span><span class="txt"><b>Export</b> ranking keywords &amp; pages from Ahrefs, SE Ranking and — once units restored — Semrush.</span></div>
+      <div class="ck"><span class="box"></span><span class="txt"><b>Map competitor pages by intent</b> (brand hub / device / pod-refill / flavour / comparison / guide / support).</span></div>
+      <div class="ck"><span class="box"></span><span class="txt"><b>Check parity</b> — equivalent page, or multiple intents on one URL?</span></div>
+      <div class="ck"><span class="box"></span><span class="txt"><b>Compare</b> raw HTML, headings, product coverage, compatibility data, schema, internal links, original media.</span></div>
+      <div class="ck"><span class="box"></span><span class="txt"><b>Record only commercially relevant gaps;</b> reject those lacking stock, causing cannibalisation, or relying on prohibited/legacy products.</span></div>
+      <div class="ck"><span class="box"></span><span class="txt"><b>Turn approved findings</b> into existing canonical URL tasks or new Draft Tasks — never a raw gap export as an auto content calendar.</span></div>
+    </div>
+  </section>
+</div><!-- /competitive -->
+
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <p style="font-family:'Space Grotesk';font-weight:600;color:#fff;font-size:1rem;margin:0 0 6px">Sources &amp; evidence notes</p>
+    <p class="src">
+      • Google Search Central — generative-AI optimisation guide (2026-06-15); helpful-content &amp; ecommerce docs<br>
+      • Ahrefs API — Site Explorer metrics + AI responses count, UK, subdomains, 25 Jun 2026 (estimates)<br>
+      • GA4 (via seoCrawl) — AI-referrer data, last 3 months, first-party · seoCrawl AI Tracker status (0 prompts)<br>
+      • SE Ranking — tracked organic set + AI Result Tracker leaderboard, UK, 25 Jun 2026 (SEOSLY analysis)<br>
+      • Live site — vapeandgo.co.uk SKE Crystal Bar page &amp; footer entity, fetched 25 Jun 2026<br>
+      • ClickUp — Vape and Go [90-Day SEO] space · Statcounter UK search &amp; AI-chatbot share, May 2026 · arXiv AIO studies<br>
+      • Google Analytics Help — AI Assistants channel · OpenAI — OAI-SearchBot vs GPTBot · GOV.UK — single-use ban, Vaping Products Duty
+    </p>
+    <p class="src" style="margin-top:14px;opacity:.75">Two evidence snapshots merged: SEOSLY/SE Ranking analysis + this session's live Ahrefs/GA4 pulls. AI citation counts &amp; SOV are tool estimates measuring different things; GA4 is first-party. Market-share figures are reported, not asserted.</p>
+    <p style="margin-top:18px;font-size:.78rem;opacity:.7">Vape &amp; Go AI SEO strategy session · 25 June 2026 · v5 · client-facing draft.</p>
+  </div>
+</footer>
+
+<a href="#" class="toplink" id="toplink" aria-label="Back to top">↑</a>
+<script>
+  // tabs
+  const tabs=[...document.querySelectorAll('.tab')];
+  const views={strategy:document.getElementById('view-strategy'),actions:document.getElementById('view-actions'),competitive:document.getElementById('view-competitive')};
+  const jump=document.getElementById('jumpnav');
+  function show(v){
+    tabs.forEach(t=>t.classList.toggle('active',t.dataset.view===v));
+    Object.entries(views).forEach(([k,el])=>el.classList.toggle('active',k===v));
+    jump.style.display=(v==='strategy')?'':'none';
+    window.scrollTo({top:0,behavior:'auto'});
+  }
+  tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.view)));
+
+  // priority filter
+  const fbtns=[...document.querySelectorAll('.fbtn')];
+  fbtns.forEach(b=>b.addEventListener('click',()=>{
+    fbtns.forEach(x=>x.classList.toggle('active',x===b));
+    const f=b.dataset.f;
+    document.querySelectorAll('#actions-table tbody tr').forEach(tr=>{
+      if(tr.classList.contains('grp')){tr.style.display='';return;}
+      const p=tr.dataset.pri;
+      let on=true;
+      if(f==='P1')on=(p==='P1');
+      else if(f==='P2')on=(p==='P2'||p==='P3');
+      tr.style.display=on?'':'none';
+    });
+    // hide group headers with no visible rows
+    document.querySelectorAll('#actions-table tbody tr.grp').forEach(g=>{
+      let n=g.nextElementSibling,any=false;
+      while(n&&!n.classList.contains('grp')){if(n.style.display!=='none'){any=true;break;}n=n.nextElementSibling;}
+      g.style.display=any?'':'none';
+    });
+  }));
+
+  // scroll-spy for jump nav (strategy only)
+  const jlinks=[...document.querySelectorAll('.jump a')];
+  const jtargets=jlinks.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const obs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){const id='#'+e.target.id;jlinks.forEach(l=>l.classList.toggle('active',l.getAttribute('href')===id));const a=document.querySelector('.jump a.active');if(a)a.scrollIntoView({block:'nearest',inline:'center'});}});},{rootMargin:'-45% 0px -50% 0px'});
+  jtargets.forEach(s=>obs.observe(s));
+
+  const top=document.getElementById('toplink');
+  addEventListener('scroll',()=>top.classList.toggle('show',scrollY>600),{passive:true});
+  top.addEventListener('click',e=>{e.preventDefault();scrollTo({top:0,behavior:'smooth'})});
+</script>
+</body>
+</html>
